@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "bancomer36"
   gem.require_paths = ["lib"]
   gem.version       = Bancomer36::VERSION
+
+  gem.add_development_dependency 'rspec', '~> 2.10'
 end
