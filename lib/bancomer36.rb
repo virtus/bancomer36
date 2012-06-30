@@ -28,6 +28,7 @@ module Bancomer36
     # input is a array of integers with values ranging from 0 to 9
     def multiply_by_2(input)
       output = []
+      input.reverse!
       input.each_with_index do |value, index|
         if index % 2 == 0
           output << value * 2
@@ -35,7 +36,7 @@ module Bancomer36
           output << value
         end
       end
-      output
+      output.reverse!
     end
 
     # Sums units and tens for each element greater than 9
@@ -93,7 +94,7 @@ module Bancomer36
     # and a check digit at the end
     def check_digit_valid?(input)
       digit = input[-1].to_i
-      input = input[0..input.length-1]
+      input = input[0..input.length-2]
       input = input
       check_digit(input) == digit
     end
